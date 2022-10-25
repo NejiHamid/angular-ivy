@@ -39,7 +39,6 @@ export class AppComponent implements OnInit {
   }
 
   updateCaseState(item: Case, index: number) {
-    console.log(index);
     debugger;
     const neighbor1 = this.checkNeighborIndex(index - this.cols)
       ? this.grid.cases[index - this.cols]?.state
@@ -60,7 +59,7 @@ export class AppComponent implements OnInit {
       ? this.grid.cases[index + this.cols].state
       : 0;
     const neighbor7 = this.checkNeighborIndex(index + this.cols + 1)
-      ? this.grid[index + this.cols + 1].state
+      ? this.grid.cases[index + this.cols + 1].state
       : 0;
     const neighbor8 = this.checkNeighborIndex(index + this.cols - 1)
       ? this.grid.cases[index + this.cols - 1].state
@@ -84,10 +83,10 @@ export class AppComponent implements OnInit {
     } else {
       item.state = State.DEAD;
     }
+    console.log(item?.state, index);
   }
 
   checkNeighborIndex(index: number) {
-    console.log(index);
     return index > 0 && index < 24;
   }
 }
