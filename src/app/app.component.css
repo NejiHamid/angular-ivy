@@ -1,0 +1,9 @@
+p {
+  font-family: Lato;
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 0px;
+  row-gap: 0px;
+}
